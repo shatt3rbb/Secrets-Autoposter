@@ -25,7 +25,6 @@ def list_available(gc):
     print("your available sheets are:")
     for sheet in gc.openall():
         print("{} - {}".format(sheet.title, sheet.id))
-    print("Automatically picking an-tester spreadsheet if available.")
     return None
 
 
