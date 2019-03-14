@@ -20,13 +20,11 @@ def gacc_init():
     print("Sheet initialization done")
     return gc, SPREADSHEET
 
-
 def list_available(gc):
     print("your available sheets are:")
     for sheet in gc.openall():
         print("{} - {}".format(sheet.title, sheet.id))
     return None
-
 
 def create_frame(gc ,SPREADSHEET):
     workbook = gc.open(SPREADSHEET)
