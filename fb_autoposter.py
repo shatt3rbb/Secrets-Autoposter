@@ -20,7 +20,6 @@ def get_api(cfg):
     graph = facebook.GraphAPI(page_access_token)
     return graph
 
-
 def post_msg(msg, api):
     api.put_object('me', 'feed', message=msg)
 
