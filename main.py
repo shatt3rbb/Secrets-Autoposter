@@ -68,6 +68,7 @@ class App(QMainWindow):
         wrapper.sheet.mark_uploaded(entry+2, 0, worksheet)
         wrapper.sheet.mark_timestamp(entry+2, worksheet)
         entry += 1
+        print("Moved to archive :(")
         try:
             self.textbox.setText('#' + cur_hash + str(henum+1) + ": " + data['Say your name friend'].iat[entry] + "\n \n" + data['School'].iat[entry])
         except(IndexError):
@@ -81,14 +82,14 @@ elif(entry==0):
     cur_hash = input('Input your new hashtag: ')
     print("Since it is the first time you are using the code with the given form, don't forget to post at least one secret!")
     hchange = 'N'
-if (hchange=='Y'):
+if (hchange=='Y' or hchange=='y' or hchange=='υ' or hchange=='Υ'):
     cur_hash = input('Input your new hashtag: ')
 try:
     print("Current Hashtag enumeration is: ",data['Hashtag'].value_counts()[cur_hash])
     henum = data['Hashtag'].value_counts()[cur_hash]
 except(KeyError):
     print("New hashtag typed!")
-    henum = 0
+    henum = 0                           #current hashtag number
 
 app = QApplication(sys.argv)
 ex = App()

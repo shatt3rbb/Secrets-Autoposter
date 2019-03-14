@@ -2,9 +2,9 @@
 
 import facebook
 
-def init_token(token):
+def init_token(token,page_id):   
     cfg = {
-        "page_id"      : '',
+        "page_id"      : page_id,
         "access_token" : token
     }
     return cfg
@@ -21,5 +21,6 @@ def get_api(cfg):
     return graph
 
 def post_msg(msg, api):
+
     api.put_object('me', 'feed', message=msg)
 
