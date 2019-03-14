@@ -49,7 +49,7 @@ def save_posted(entry, posted, sheet):
     sheet.update_cell(entry, 5, posted)
 
 #The find_entry functions finds the first empty cell in the binary 
-column of the spread sheet and begins work from that point
+#column of the spread sheet and begins work from that point
 
 def find_entry(data):
     i = 0
