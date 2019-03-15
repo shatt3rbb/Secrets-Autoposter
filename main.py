@@ -24,8 +24,8 @@ class App(QMainWindow):
  
         # Create textbox
         self.textbox = QTextEdit(self)
-        self.textbox.move(20, 20)
-        self.textbox.resize(600,300)
+        self.textbox.move(20, 25)
+        self.textbox.resize(600,295)
 
         self.textbox1 = QTextEdit(self)
         self.textbox1.move(205,325)
@@ -48,9 +48,22 @@ class App(QMainWindow):
         self.button3.move(245,355)
         self.button3.resize(150,75)
 
-        l1 = QtWidgets.QLabel(self)
-        l1.setText("#")
-        l1.move(195,320)
+        self.l1 = QtWidgets.QLabel(self)
+        self.l1.setText("#")
+        self.l1.move(195,320)
+
+        self.l2 = QtWidgets.QLabel(self)
+        self.l2.setText("Queue: " + str(Queue))
+        self.l2.move(21,315)
+
+        self.l3 = QtWidgets.QLabel(self)
+        self.l3.setText("Posted: " + str(Posted))
+        self.l3.move(21,327)
+
+        self.l4 = QtWidgets.QLabel(self)
+        self.l4.setText("Date: "+ str(Date))
+        self.l4.move(21,0)
+        self.l4.resize(200,25)
         # connect button to function on_click
         self.button1.clicked.connect(self.post_anom)
         self.button2.clicked.connect(self.move_to_archive)
@@ -74,6 +87,9 @@ class App(QMainWindow):
     def post_anom(self):
         global entry
         global henum
+        global Queue
+        global Posted
+        global Date
         answer = self.textbox.toPlainText()
         wrapper.fb_autoposter.post_msg(answer, api)
         print("Posted!")
@@ -87,18 +103,29 @@ class App(QMainWindow):
         self.textbox.setText("")
         try:
             self.textbox.setText('#' + cur_hash + str(henum+1) + ": " + data['Say your name friend'].iat[entry] + "\n \n" + data['School'].iat[entry])
+            Queue -= 1
+            Posted += 1
+            Date = data['Χρονική σήμανση'][entry]
+            self.l2.setText("Queue: " + str(Queue))
+            self.l3.setText("Posted: " + str(Posted))
+            self.l4.setText("Date: "+ str(Date))
         except(IndexError):
             #happens when gsheet has no data left for the given entry
             self.textbox.setText("Entries over, you can close program")
         
     def move_to_archive(self):
         global entry
+        global Queue
         wrapper.sheet.mark_uploaded(entry+2, 0, worksheet)
         wrapper.sheet.mark_timestamp(entry+2, worksheet)
         entry += 1
         print("Moved to archive :(")
         try:
             self.textbox.setText('#' + cur_hash + str(henum+1) + ": " + data['Say your name friend'].iat[entry] + "\n \n" + data['School'].iat[entry])
+            Queue -= 1
+            self.l2.setText("Queue: " + str(Queue))
+            Date = data['Χρονική σήμανση'][entry]
+            self.l4.setText("Date: "+ str(Date))
         except(IndexError):
             self.textbox.setText("Entries over, you can close program")
 
@@ -111,7 +138,7 @@ class App(QMainWindow):
         self.textbox1.setText(cur_hash)  
 ######################################################################3
          
-data, entry, api, worksheet = wrapper.initialize()
+data, entry, api, worksheet,max_entry = wrapper.initialize()
 if (entry!=0):
     cur_hash = wrapper.sheet.show_hashtag(data, entry)
 elif(entry==0):
@@ -123,6 +150,9 @@ try:
 except(KeyError):
     print("New hashtag typed!")
     henum = 0                           #current hashtag number
+Date = data['Χρονική σήμανση'][entry]
+Queue = max_entry-(entry+2)
+Posted = 0
 app = QApplication(sys.argv)
 ex = App()
 sys.exit(app.exec_())
