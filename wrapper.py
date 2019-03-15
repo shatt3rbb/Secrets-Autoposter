@@ -42,7 +42,8 @@ def initialize():
     print("Looking for Entry....")
     entry = sheet.find_entry(data)
     print("Entry Found, number of entry is: ", entry+2)
-    
+    max_entry = sheet.find_empty_cell(data)
+    print("Post left to do: " + str(max_entry - (entry+2)))
     #Entry Initialization
 
     return data, entry, api, worksheet

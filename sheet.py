@@ -21,11 +21,14 @@ def gacc_init():
         json_name = json_name.replace("'", "")
         json_name = json_name.replace("\n", "")
         location = os.path.abspath(os.path.dirname(sys.argv[0]))+"\\" + json_name +".json"
+        spreadsheet = lines[3].replace("spreadsheet_name = '", "")
+        spreadsheet = spreadsheet.replace("'", "")
+        spreadsheet = spreadsheet.replace("\n", "")
     except:# if it fails ask user to provide it instead
         print("Couldn't read json location from settings file.")
         location = input("Please specify absolute location of your json: ")
     SECRETS_FILE = location
-    SPREADSHEET = "an-tester"
+    SPREADSHEET = spreadsheet
     print("Initializing sheets...Please wait...")
     credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRETS_FILE, SCOPE)
     gc = gspread.authorize(credentials)
@@ -60,14 +63,26 @@ def mark_timestamp(entry, sheet):
 def save_posted(entry, posted, sheet):
     sheet.update_cell(entry, 5, posted)
 
+def find_empty_cell(data):
+    i = 1
+    try:
+        while True:
+            if (data['School'][i] == "None"):
+                print("break")
+                break            
+            i+=1
+    except:
+        return (i) 
+    return (i) 
+
 #The find_entry functions finds the first empty cell in the binary 
 #column of the spread sheet and begins work from that point
-
 def find_entry(data):
     i = 0
     while True:
         if((data['Binary'][i] != 0) and (data['Binary'][i] != 1)):
             break
+            
         i+=1
     return i
 
