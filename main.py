@@ -102,7 +102,7 @@ class App(QMainWindow):
         entry += 1
         henum += 1
         self.textbox.setText("")
-        safety_enum[cur_hash] += 1
+        safety_enum[cur_hash] = henum
         try:
             self.textbox.setText('#' + cur_hash + str(henum+1) + ": " + data['Say your name friend'].iat[entry] + "\n \n" + data['School'].iat[entry])
             Queue -= 1
