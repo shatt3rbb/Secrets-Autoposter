@@ -4,29 +4,21 @@ import sheet
 import fb_autoposter
 import pandas
 import time
+import decryptor
 
 def initialize():
-    gc, spreadsheet = sheet.gacc_init()
+    gc = sheet.gacc_init()
     sheet.list_available(gc)
-    print('-------------------------')
-    data, worksheet = sheet.create_frame(gc ,spreadsheet)
-    try:#Tries to get fb api key and page id from the settings file
-        lines = [] 
-        f = open("settings.midget","r+") #open for read/write
-        for line in f:lines.append(line)
-        f.close()
-        key = lines[1].replace("fb_token = '", "")
-        key = key.replace("'", "")
-        key = key.replace("\n", "")
-        page_id = lines[2].replace("page_id = '", "")
-        page_id = page_id.replace("'", "")
-        page_id = page_id.replace("\n", "")
+    print('-------------------------')    
+    try:#Tries to get page id  and fb api key from the google sheet
+        token_encrypted,page_id,spreadsheet = sheet.get_settings(gc)
+        key = decryptor.decrypt(token_encrypted)
     except:# if it fails ask user to provide it instead
-        print("Couldn't read api key from settings file.")
+        print("Couldn't read api key.")
         key = input("Input your facebook user access api key: ")
-        print("Couldn't read page id from settings file.")
+        print("Couldn't read page id.")
         page_id = input("Please specify page id: ")   
-    
+    data, worksheet = sheet.create_frame(gc ,spreadsheet)
     #Autoposter initialization
     
     print("Initializing facebook poster... Please wait....")

@@ -1,19 +1,13 @@
 import os,sys
 import shutil
 
-
-f = open("settings.midget","w")
-f.write("json_file_name = ''")
+f = open("secret.json","w")
+f.write("{")
 f.write('\n')
-f.write("fb_token = ''")
-f.write('\n')
-f.write("page_id = ''")
-f.write('\n')
-f.write("spreadsheet_name = ''")
-f.write('\n')
+f.write("}")
 f.close()
 
-f = open("secret.json","w")
+f = open("rsa.pt","w")
 f.write("{")
 f.write('\n')
 f.write("}")
