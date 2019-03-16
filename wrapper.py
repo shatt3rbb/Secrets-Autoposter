@@ -46,6 +46,6 @@ def initialize():
     print("Post left to do: " + str(max_entry - (entry+2)))
     #Entry Initialization
 
-    return data, entry, api, worksheet,max_entry
+    return data, entry, api, worksheet, max_entry
 
 

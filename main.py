@@ -130,13 +130,15 @@ class App(QMainWindow):
             self.textbox.setText("Entries over, you can close program")
 
     def change_hashtag(self):
+        global henum
+        global cur_hash
         cur_hash = self.textbox1.toPlainText()
         print("Setting hashtag to: "+ cur_hash)
         print("New hashtag typed!")
         henum = 0  
         self.textbox.setText('#' + cur_hash + str(henum+1) + ": " + data['Say your name friend'].iat[entry] + "\n \n" + data['School'].iat[entry])
         self.textbox1.setText(cur_hash)  
-######################################################################3
+######################################################################
          
 data, entry, api, worksheet,max_entry = wrapper.initialize()
 if (entry!=0):
@@ -151,7 +153,7 @@ except(KeyError):
     print("New hashtag typed!")
     henum = 0                           #current hashtag number
 Date = data['Χρονική σήμανση'][entry]
-Queue = max_entry-(entry+2)
+Queue = max_entry-entry
 Posted = 0
 app = QApplication(sys.argv)
 ex = App()
