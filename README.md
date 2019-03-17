@@ -39,5 +39,4 @@ releases them might lead to script disfunction.
 
 For further documentation or help please leave a message or email at stzaneti@physics.auth.gr
 
-Secrets-Autoposter by shatt3rbb and GeorgeGrig
-Enjoy!
+Secrets-Autoposter by shatt3rbb and GeorgeGrig.
