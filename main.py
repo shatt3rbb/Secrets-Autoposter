@@ -64,6 +64,13 @@ class App(QMainWindow):
         self.l4.setText("Date: "+ str(Date))
         self.l4.move(21,0)
         self.l4.resize(200,25)
+
+        if wrapper.url_checker(self.textbox.toPlainText()) == 1: link_exist = "Yep"
+        if wrapper.url_checker(self.textbox.toPlainText()) == 0: link_exist = "Nop"
+        self.l5 = QtWidgets.QLabel(self)
+        self.l5.setText("Has link: "+ link_exist)
+        self.l5.move(555,320)
+
         # connect button to function on_click
         self.button1.clicked.connect(self.post_anom)
         self.button2.clicked.connect(self.move_to_archive)
@@ -111,9 +118,13 @@ class App(QMainWindow):
             self.l2.setText("Queue: " + str(Queue))
             self.l3.setText("Posted: " + str(Posted))
             self.l4.setText("Date: "+ str(Date))
+            if wrapper.url_checker(self.textbox.toPlainText()) == 1: link_exist = "Yep"
+            if wrapper.url_checker(self.textbox.toPlainText()) == 0: link_exist = "Nop"
+            self.l5.setText("Has link: "+ link_exist)         
         except(IndexError):
             #happens when gsheet has no data left for the given entry
-            self.textbox.setText("Entries over, you can close program")        
+            self.textbox.setText("Entries over, you can close program")    
+
     def move_to_archive(self):
         global entry
         global Queue
@@ -127,6 +138,9 @@ class App(QMainWindow):
             self.l2.setText("Queue: " + str(Queue))
             Date = data['Χρονική σήμανση'][entry]
             self.l4.setText("Date: "+ str(Date))
+            if wrapper.url_checker(self.textbox.toPlainText()) == 1: link_exist = "Yep"
+            if wrapper.url_checker(self.textbox.toPlainText()) == 0: link_exist = "Nop"
+            self.l5.setText("Has link: "+ link_exist)
         except(IndexError):
             self.textbox.setText("Entries over, you can close program")
 

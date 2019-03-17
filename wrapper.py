@@ -40,4 +40,24 @@ def initialize():
 
     return data, entry, api, worksheet, max_entry
 
+def url_checker(str):
+   i = 0 
+   if "www." in str:
+       i = 1
+   if "WWW." in str:
+       i = 1  
+   if "https:" in str:
+       i = 1      
+   if "http:" in str:
+       i = 1   
+   if ".com" in str:
+       i = 1 
+   if ".gr" in str:
+       i = 1 
+   if "@gmail" in str:
+       i = 1 
+   if "@outlook" in str:
+       i = 1 
+   return i    
+
 
