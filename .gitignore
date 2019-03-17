@@ -1,0 +1,6 @@
+secret.json
+rsa.pt
+geckodriver.log
+__pycache__/sheet.cpython-36.pyc
+__pycache__/wrapper.cpython-36.pyc
+__pycache__/decryptor.cpython-36.pyc

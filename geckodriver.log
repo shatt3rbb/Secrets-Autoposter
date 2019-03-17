@@ -3426,3 +3426,45 @@ JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3ivR54/y9/l/en_US/3E9h
 1552780207285	Marionette	DEBUG	0 -> [0,35,"WebDriver:ExecuteScript",{"args":[{"ELEMENT":"f32872cf-7943-404b-b906-521d44b7f4ba","element-6066-11e4-a52e-4f735466ce ... dow!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);","scriptTimeout":null,"specialPowers":false}]
 1552780207294	Marionette	DEBUG	0 <- [1,35,null,{"value":"https://developers.facebook.com/tools/debug/accesstoken/?access_token=EAAhmQsils5ABAAdN4S3aZAmuMB54ObmZB ... YgZBNsBMR3dFlxA6Opex65iY9W2pEL1KBOjoNR9OyqVyXEBtegmF3bRO7S6f1Nnlt4MIOT7YbxsdecNsJmCEz2EcILmabKMZAZAZCB1MawmwWrFIFix6cXMIZD"}]
 1552780207597	Marionette	DEBUG	Closed connection 0
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3ivR54/y9/l/en_US/3E9hy-ZF35w.js, line 33: unreachable code after return statement
+[Child 5464, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 5464, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 21048, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 21048, Chrome_ChildThread] WARNING: pipe error: 1[Child 11008, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 11008, Chrome_ChildThread] WA[Parent 8496, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 9360, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1552780752430	Marionette	TRACE	Received observer notification xpcom-will-shutdown
+1552780752431	Marionette	DEBUG	Resetting recommended pref apz.content_response_timeout
+1552780752431	Marionette	DEBUG	Resetting recommended pref browser.contentblocking.introCount
+1552780752431	Marionette	DEBUG	Resetting recommended pref browser.download.panel.shown
+1552780752431	Marionette	DEBUG	Resetting recommended pref browser.newtabpage.enabled
+1552780752432	Marionette	DEBUG	Resetting recommended pref browser.pagethumbnails.capturing_disabled
+1552780752432	Marionette	DEBUG	Resetting recommended pref browser.search.update
+1552780752432	Marionette	DEBUG	Resetting recommended pref browser.tabs.disableBackgroundZombification
+1552780752432	Marionette	DEBUG	Resetting recommended pref browser.tabs.warnOnCloseOtherTabs
+1552780752433	Marionette	DEBUG	Resetting recommended pref browser.tabs.warnOnOpen
+1552780752433	Marionette	DEBUG	Resetting recommended pref browser.usedOnWindows10.introURL
+1552780752433	Marionette	DEBUG	Resetting recommended pref browser.urlbar.suggest.searches
+1552780752434	Marionette	DEBUG	Resetting recommended pref datareporting.policy.dataSubmissionPolicyAccepted
+1552780752434	Marionette	DEBUG	Resetting recommended pref dom.disable_beforeunload
+1552780752434	Marionette	DEBUG	Resetting recommended pref dom.disable_open_during_load
+1552780752435	Marionette	DEBUG	Resetting recommended pref dom.file.createInChild
+1552780752435	Marionette	DEBUG	Resetting recommended pref dom.max_chrome_script_run_time
+1552780752435	Marionette	DEBUG	Resetting recommended pref dom.max_script_run_time
+1552780752436	Marionette	DEBUG	Resetting recommended pref extensions.getAddons.cache.enabled
+1552780752436	Marionette	DEBUG	Resetting recommended pref extensions.webservice.discoverURL
+1552780752436	Marionette	DEBUG	Resetting recommended pref network.http.prompt-temp-redirect
+1552780752436	Marionette	DEBUG	Resetting recommended pref network.http.speculative-parallel-limit
+1552780752436	Marionette	DEBUG	Resetting recommended pref security.fileuri.strict_origin_policy
+1552780752437	Marionette	DEBUG	Resetting recommended pref security.notification_enable_delay
+1552780752437	Marionette	DEBUG	Resetting recommended pref signon.autofillForms
+1552780752437	Marionette	DEBUG	Resetting recommended pref signon.rememberSignons
+1552780752437	Marionette	DEBUG	Resetting recommended pref toolkit.cosmeticAnimations.enabled
+1552780752438	Marionette	INFO	Stopped listening on port 59054
+1552780752438	Marionette	DEBUG	Remote service is inactive
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 18
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
