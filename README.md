@@ -5,7 +5,7 @@ Secrets-Autoposter is a simple yet useful poster, that can parse data from a
 google sheets database, let you quickly edit them and post them to your facebook
 page.
 
-# Dependencies
+### Dependencies
 The script is tested and fuctioning correctly using the following packages:
 -python 3.7.1
 -pandas 0.24.1
@@ -16,7 +16,7 @@ The script is tested and fuctioning correctly using the following packages:
 -PyQt5-sip 4.19.14
 -PyOpenSSL 19.0.0
 
-# Instructions
+### Instructions
 Open the settings.midget file with a text editor and type:
 -Your facebook Page id
 -Your facebook API key
@@ -33,7 +33,7 @@ You can read and easily understand the script, and the total amount of code is n
 Leave a message in if you are interested in a screenshot of the google sheet
 that I used, in order to do your job without reading any code.
 
-# Known Bugs
+### Known Bugs
 No bugs have been found yet, although abusing the post or move to archive buttons before qt5
 releases them might lead to script disfunction.
 
